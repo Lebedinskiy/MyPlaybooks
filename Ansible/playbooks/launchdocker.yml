@@ -1,0 +1,10 @@
+---
+- hosts: tag_Name_Terraform
+  become: yes
+  tasks:
+  - git:
+      repo: 'https://github.com/Lebedinskiy/HillelDW.git'
+      dest: /home/ubuntu/conteiner
+  - name: Change dir
+    shell: cd /home/ubuntu/conteiner && docker-compose up -d
+
